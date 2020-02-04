@@ -42,7 +42,7 @@ namespace yar_bfng
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CategoryForm f = new CategoryForm("Видеокарта");
+            CategoryForm f = new CategoryForm("Видеокарты");
             f.Show();
         }
 
