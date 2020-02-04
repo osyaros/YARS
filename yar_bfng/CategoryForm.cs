@@ -12,6 +12,19 @@ namespace yar_bfng
 {
     public partial class CategoryForm : Form
     {
+        void drawPicture(TextBox textBox, PictureBox pictureBox)
+        {
+            if (textBox.Text != "")
+            {
+                pictureBox.Load("../../Pictures/" + textBox.Text + ".jpg");
+            }
+            else
+            {
+                textBox.Visible = false;
+                pictureBox.Visible = false;
+            }
+        }
+
         public CategoryForm(string text)
         {
             InitializeComponent();
@@ -20,63 +33,47 @@ namespace yar_bfng
             pictureBox1.Load("../../Pictures/bg.jpg");
             BackgroundImage = pictureBox1.Image;
 
+
+            textBox2.Text = "";
+
             if (text == "Процессоры")
             {
-                pictureBox2.Load("../../Pictures/ryzen5_2600.jpg");
                 textBox2.Text = "AMD Ryzen 5 2600x";
-                pictureBox3.Load("../../Pictures/ryzen7_3700x.jpg");
                 textBox3.Text = "AMD Ryzen 7 3700x";
-                pictureBox4.Load("../../Pictures/ryzen9.jpg");
                 textBox4.Text = "AMD Ryzen 9";
-                pictureBox5.Load("../../Pictures/intel_corei9.jpg");
                 textBox5.Text = "Intel Core I9";
-                pictureBox6.Load("../../Pictures/intel i9_9940x.jpg");
-                textBox6.Text = "Технические характеристики" +
-                    Environment.NewLine + "Количество потоков: 28" +
-                    "";
-/*Частота процессора(МГц)""
-
-
-3300
-Пропускная способность шины(GT / s)
-8
-Тепловыделение(Вт)
-165
-Максимальная температура °C
-88
-Разрядность ЦАП(бит)
-64
-Технологический процесс(nm)
-14
-Спецификация памяти
-Тип оперативной памяти
-
-DDR4
-Макс.объем оперативной памяти(Гб)
-128
-Поддержка памяти ECC
-N
-Количество каналов памяти
-4
-Поддержка частот памяти(МГц)
-2666
-Спецификация PCI Express
-Версия PCI Express
-3.0
-Количество каналов PCI Express
-44
-Встроенная графика
-Встроенное графическое ядро
-N";*/
+                textBox6.Text = "Intel i9_9940x";
             }
             if (text == "Видеокарты")
             {
-                pictureBox2.Load("../../Pictures/bg.jpg");
-                textBox2.Text = "Все death";
+                textBox2.Text = "MSI Nvidia Geforce GTX 1660";
+                textBox3.Text = "ASUS Geforce GTX 1080 Ti";
+                textBox4.Text = "MSI Nvidia Geforce RTX 2060";
+                textBox5.Text = "GIGABYTE nVidia GeForce RTX 2070";
+                textBox6.Text = "GIGABYTE Nvidia GeForce RTX 2080";
             }
+            if (text == "Блоки питания")
+            {
+                textBox2.Text = "AEROCOOL KCAS PLUS 600Вт";
+                textBox3.Text = "THERMALTAKE Smart BX1 RGB, 750Вт";
+                textBox4.Text = "be quite DARK POWER PRO 11 850W";
+                textBox5.Text = "";
+                textBox6.Text = "";
+            }
+
+            drawPicture(textBox2, pictureBox2);
+            drawPicture(textBox3, pictureBox3); 
+            drawPicture(textBox4, pictureBox4);
+            drawPicture(textBox5, pictureBox5);
+            drawPicture(textBox6, pictureBox6);   
         }
 
         private void CoreForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
