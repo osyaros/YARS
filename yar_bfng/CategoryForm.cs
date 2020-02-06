@@ -17,6 +17,7 @@ namespace yar_bfng
             if (textBox.Text != "")
             {
                 pictureBox.Load("../../Pictures/" + textBox.Text + ".jpg");
+                pictureBox.Tag = textBox.Text;
             }
             else
             {
@@ -57,8 +58,8 @@ namespace yar_bfng
                 textBox2.Text = "AEROCOOL KCAS PLUS 600Вт";
                 textBox3.Text = "THERMALTAKE Smart BX1 RGB, 750Вт";
                 textBox4.Text = "be quite DARK POWER PRO 11 850W";
-                textBox5.Text = "";
-                textBox6.Text = "";
+                textBox5.Text = "AEROCOOL Strike-X 1100Вт";
+                textBox6.Text = "ACCORD GOLD ACC-1500Вт";
             }
 
             drawPicture(textBox2, pictureBox2);
@@ -76,6 +77,13 @@ namespace yar_bfng
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            ProductForm f = new ProductForm(pb.Tag.ToString());
+            f.Show();
         }
     }
 }
