@@ -30,10 +30,16 @@ namespace yar_bfng
         {
             InitializeComponent();
             Text = text;
-
+            button1.Visible = false;
             pictureBox1.Load("../../Pictures/bg.jpg");
             BackgroundImage = pictureBox1.Image;
+            TextBox[] tb = new TextBox[20];
 
+            tb[0] = textBox2;
+            tb[1] = textBox3;
+            tb[2] = textBox4;
+            tb[3] = textBox5;
+            tb[4] = textBox6;
 
             textBox2.Text = "";
 
@@ -42,7 +48,7 @@ namespace yar_bfng
                 textBox2.Text = "AMD Ryzen 5 2600x";
                 textBox3.Text = "AMD Ryzen 7 3700x";
                 textBox4.Text = "AMD Ryzen 9";
-                textBox5.Text = "Intel Core I9";
+                textBox5.Text = "Intel Core I9-9900KS";
                 textBox6.Text = "Intel i9_9940x";
             }
             if (text == "Видеокарты")
@@ -58,8 +64,23 @@ namespace yar_bfng
                 textBox2.Text = "AEROCOOL KCAS PLUS 600Вт";
                 textBox3.Text = "THERMALTAKE Smart BX1 RGB, 750Вт";
                 textBox4.Text = "be quite DARK POWER PRO 11 850W";
+               /* for (int i = 3; i < 5; i++)
+                {
+                    tb[i].Visible = false;
+                }*/
                 textBox5.Text = "AEROCOOL Strike-X 1100Вт";
                 textBox6.Text = "ACCORD GOLD ACC-1500Вт";
+            }
+
+            if (text == "Системы охолождения")
+            {
+                button1.Visible = true;
+                textBox2.Text = "TITAN TTC NK35TZ";
+                textBox3.Text = "DEEPCOOL Watercooler GAMMAXX L240T WHITE";
+                textBox4.Text = "DEEPCOOL Watercooler CASTLE 240 V2";
+                button1.Tag = "http://hyperpc.ru";
+
+
             }
 
             drawPicture(textBox2, pictureBox2);
@@ -84,6 +105,14 @@ namespace yar_bfng
             PictureBox pb = (PictureBox)sender;
             ProductForm f = new ProductForm(pb.Tag.ToString());
             f.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Tag != null)
+            {
+                System.Diagnostics.Process.Start(button1.Tag.ToString());
+            }
         }
     }
 }
