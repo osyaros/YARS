@@ -63,5 +63,10 @@ namespace yar_bfng
             CategoryForm f = new CategoryForm("Жесткие диски");
             f.Show();
         }
+
+        private void PriceListForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
