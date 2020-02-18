@@ -10,8 +10,31 @@ using System.Windows.Forms;
 
 namespace yar_bfng
 {
+    public struct Product
+    {
+        public string name;
+        public string mark;
+        public int price;
+        public PictureBox pb;
+        public TextBox textbox;
+
+        public Product(string name_, string mark_, int price_)
+        {
+            name = name_;
+            mark = mark_;
+            price = price_;
+            pb = new PictureBox();
+            textbox = new TextBox();
+        }
+    }
+
+
+
+
     public partial class CategoryForm : Form
     {
+        Product[] product_list = new Product[100];
+
         void drawPicture(TextBox textBox, PictureBox pictureBox)
         {
             if (textBox.Text != "")
@@ -29,6 +52,34 @@ namespace yar_bfng
         public CategoryForm(string text)
         {
             InitializeComponent();
+
+            product_list[0] = new Product("AMD Ryzen 5 2600x", "AMD", 12000);
+            product_list[1] = new Product("AMD Ryzen 7 3700x", "AMD", 22000);
+            product_list[2] = new Product("AMD Ryzen 9", "AMD", 50000);
+            product_list[3] = new Product("Intel Core I9-9900KS", "Intel", 60000);
+            product_list[4] = new Product("Intel i9_9940x", "Intel", 100000);
+
+            int x = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                product_list[i].pb.Location = new Point(x, 100);
+                product_list[i].pb.Size = new Size(150, 150);
+                product_list[i].pb.SizeMode = PictureBoxSizeMode.Zoom;
+                product_list[i].pb.Load("../../Pictures/" + product_list[i].name + ".jpg");
+
+                product_list[i].textbox.Location = new Point(x, 270);
+                product_list[i].textbox.Size = new Size(150, 40);
+                product_list[i].textbox.ReadOnly = true;
+                product_list[i].textbox.Enabled = false;
+                product_list[i].textbox.Multiline = true;
+                product_list[i].textbox.Text = product_list[i].name;
+
+                Controls.Add(product_list[i].pb);
+                Controls.Add(product_list[i].textbox);
+                x = x + 200;
+            }
+
+
             Text = text;
             button1.Visible = false;
             pictureBox1.Load("../../Pictures/bg.jpg");
@@ -48,7 +99,8 @@ namespace yar_bfng
                 textBox2.Text = "AMD Ryzen 5 2600x";
                 textBox3.Text = "AMD Ryzen 7 3700x";
                 textBox4.Text = "AMD Ryzen 9";
-                textBox5.Text = "Intel Core I9-9900KS";
+                textBox5.Text = "Intel Core I9-9900KS" +
+                    "";
                 textBox6.Text = "Intel i9_9940x";
             }
             if (text == "Видеокарты")
@@ -112,6 +164,32 @@ namespace yar_bfng
             if (button1.Tag != null)
             {
                 System.Diagnostics.Process.Start(button1.Tag.ToString());
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int x = 0;
+            int y = 100;
+            for (int i = 0; i < 5; i++)
+            {
+                product_list[i].pb.Visible = false;
+                product_list[i].textbox.Visible = false;
+
+                if (product_list[i].price <= Convert.ToInt32(textBox7.Text))
+                {
+                    product_list[i].pb.Visible = true;
+                    product_list[i].textbox.Visible = true;
+                    product_list[i].pb.Location = new Point(x, y);
+                    product_list[i].textbox.Location = new Point(x, y + 170);
+                    x = x + 200;
+
+                    if (x > Width - 200)
+                    {
+                        y = y  + 250;
+                        x = 0;
+                    }
+                }
             }
         }
     }
