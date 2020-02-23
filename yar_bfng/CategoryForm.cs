@@ -15,14 +15,16 @@ namespace yar_bfng
         public string name;
         public string mark;
         public int price;
+        public string type;
         public PictureBox pb;
         public TextBox textbox;
 
-        public Product(string name_, string mark_, int price_)
+        public Product(string name_, string mark_, int price_, string type_)
         {
             name = name_;
             mark = mark_;
             price = price_;
+            type = type_;
             pb = new PictureBox();
             textbox = new TextBox();
         }
@@ -52,22 +54,44 @@ namespace yar_bfng
         public CategoryForm(string text)
         {
             InitializeComponent();
+            Text = text;
+            pictureBox1.Load("../../Pictures/bg.jpg");
+            BackgroundImage = pictureBox1.Image;
 
-            product_list[0] = new Product("AMD Ryzen 5 2600x", "AMD", 12000);
-            product_list[1] = new Product("AMD Ryzen 7 3700x", "AMD", 22000);
-            product_list[2] = new Product("AMD Ryzen 9", "AMD", 50000);
-            product_list[3] = new Product("Intel Core I9-9900KS", "Intel", 60000);
-            product_list[4] = new Product("Intel i9_9940x", "Intel", 100000);
+            product_list[0] = new Product("AMD Ryzen 5 2600x", "AMD", 12000, "Процессоры");
+            product_list[1] = new Product("AMD Ryzen 7 3700x", "AMD", 22000, "Процессоры");
+            product_list[2] = new Product("AMD Ryzen 9", "AMD", 50000, "Процессоры");
+            product_list[3] = new Product("Intel Core I9-9900KS", "Intel", 60000, "Процессоры");
+            product_list[4] = new Product("Intel i9_9940x", "Intel", 100000, "Процессоры");
+            product_list[5] = new Product("MSI Nvidia Geforce GTX 1660", "MSI", 17000, "Видеокарты");
+            product_list[6] = new Product("ASUS Geforce GTX 1080 Ti", "ASUS", 100000, "Видеокарты");
+            product_list[7] = new Product("MSI Nvidia Geforce RTX 2060", "MSI", 100000, "Видеокарты");
+            product_list[8] = new Product("GIGABYTE nVidia GeForce RTX 2070", "GIGABYTE", 39000, "Видеокарты");
+            product_list[9] = new Product("GIGABYTE Nvidia GeForce RTX 2080", "GIGABYTE", 60000, "Видеокарты");
+            /*product_list[10] = new Product("AEROCOOL KCAS PLUS 600Вт", "AEROCOOL", 3300,);
+            product_list[11] = new Product("THERMALTAKE Smart BX1 RGB, 750Вт", "THERMALTAKE", 100000);
+            product_list[12] = new Product("be quite DARK POWER PRO 11 850W", "be quite", 100000);
+            product_list[13] = new Product("AEROCOOL Strike-X 1100Вт", "AEROCOOL", 100000);
+            product_list[14] = new Product("ACCORD GOLD ACC-1500Вт", "TITAN", 100000);
+            product_list[15] = new Product("TITAN TTC NK35TZ", "Intel", 100000);
+            product_list[16] = new Product("DEEPCOOL Watercooler GAMMAXX L240T WHITE", "DEEPCOOL", 100000);
+            product_list[17] = new Product("DEEPCOOL Watercooler CASTLE 240 V2", "DEEPCOOL", 100000);
+            product_list[18] = new Product("Intel i9_9940x", "Intel", 100000);
+            product_list[19] = new Product("Intel i9_9940x", "Intel", 100000);
+            product_list[20] = new Product("Intel i9_9940x", "Intel", 100000);
+            product_list[21] = new Product("Intel i9_9940x", "Intel", 100000);*/
 
-            int x = 0;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
-                product_list[i].pb.Location = new Point(x, 100);
+                product_list[i].pb.Location = new Point(150 * i, 150);
                 product_list[i].pb.Size = new Size(150, 150);
                 product_list[i].pb.SizeMode = PictureBoxSizeMode.Zoom;
                 product_list[i].pb.Load("../../Pictures/" + product_list[i].name + ".jpg");
+                product_list[i].pb.Click += new EventHandler(pictureBox2_Click);
+                product_list[i].pb.Tag = product_list[i].name;
+                product_list[i].pb.Visible = true;
 
-                product_list[i].textbox.Location = new Point(x, 270);
+                product_list[i].textbox.Location = new Point(150 * i, 250);
                 product_list[i].textbox.Size = new Size(150, 40);
                 product_list[i].textbox.ReadOnly = true;
                 product_list[i].textbox.Enabled = false;
@@ -76,70 +100,18 @@ namespace yar_bfng
 
                 Controls.Add(product_list[i].pb);
                 Controls.Add(product_list[i].textbox);
-                x = x + 200;
             }
+            
 
-
-            Text = text;
             button1.Visible = false;
-            pictureBox1.Load("../../Pictures/bg.jpg");
-            BackgroundImage = pictureBox1.Image;
-            TextBox[] tb = new TextBox[20];
-
-            tb[0] = textBox2;
-            tb[1] = textBox3;
-            tb[2] = textBox4;
-            tb[3] = textBox5;
-            tb[4] = textBox6;
-
-            textBox2.Text = "";
-
-            if (text == "Процессоры")
-            {
-                textBox2.Text = "AMD Ryzen 5 2600x";
-                textBox3.Text = "AMD Ryzen 7 3700x";
-                textBox4.Text = "AMD Ryzen 9";
-                textBox5.Text = "Intel Core I9-9900KS" +
-                    "";
-                textBox6.Text = "Intel i9_9940x";
-            }
-            if (text == "Видеокарты")
-            {
-                textBox2.Text = "MSI Nvidia Geforce GTX 1660";
-                textBox3.Text = "ASUS Geforce GTX 1080 Ti";
-                textBox4.Text = "MSI Nvidia Geforce RTX 2060";
-                textBox5.Text = "GIGABYTE nVidia GeForce RTX 2070";
-                textBox6.Text = "GIGABYTE Nvidia GeForce RTX 2080";
-            }
-            if (text == "Блоки питания")
-            {
-                textBox2.Text = "AEROCOOL KCAS PLUS 600Вт";
-                textBox3.Text = "THERMALTAKE Smart BX1 RGB, 750Вт";
-                textBox4.Text = "be quite DARK POWER PRO 11 850W";
-               /* for (int i = 3; i < 5; i++)
-                {
-                    tb[i].Visible = false;
-                }*/
-                textBox5.Text = "AEROCOOL Strike-X 1100Вт";
-                textBox6.Text = "ACCORD GOLD ACC-1500Вт";
-            }
-
+           
             if (text == "Системы охолождения")
             {
                 button1.Visible = true;
-                textBox2.Text = "TITAN TTC NK35TZ";
-                textBox3.Text = "DEEPCOOL Watercooler GAMMAXX L240T WHITE";
-                textBox4.Text = "DEEPCOOL Watercooler CASTLE 240 V2";
                 button1.Tag = "http://hyperpc.ru";
-
-
             }
 
-            drawPicture(textBox2, pictureBox2);
-            drawPicture(textBox3, pictureBox3); 
-            drawPicture(textBox4, pictureBox4);
-            drawPicture(textBox5, pictureBox5);
-            drawPicture(textBox6, pictureBox6);   
+            button2_Click(null, null);
         }
 
         private void CoreForm_Load(object sender, EventArgs e)
@@ -171,15 +143,22 @@ namespace yar_bfng
         {
             int x = 0;
             int y = 100;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
-                product_list[i].pb.Visible = false;
-                product_list[i].textbox.Visible = false;
+                product_list[i].pb.Visible = true;
+                product_list[i].textbox.Visible = true;
 
-                if (product_list[i].price <= Convert.ToInt32(textBox7.Text))
+                if (textBox7.Text != "" &&
+                    product_list[i].price >= Convert.ToInt32(textBox7.Text))
                 {
-                    product_list[i].pb.Visible = true;
-                    product_list[i].textbox.Visible = true;
+                    product_list[i].pb.Visible = false;
+                    product_list[i].textbox.Visible = false;
+                }
+                
+
+
+                if (product_list[i].pb.Visible)
+                { 
                     product_list[i].pb.Location = new Point(x, y);
                     product_list[i].textbox.Location = new Point(x, y + 170);
                     x = x + 200;
@@ -191,6 +170,13 @@ namespace yar_bfng
                     }
                 }
             }
+        }
+
+        
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
