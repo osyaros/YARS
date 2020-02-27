@@ -24,7 +24,7 @@ namespace yar_bfng
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PriceListForm f = new PriceListForm();
+            CategoryForm f = new CategoryForm("");
             f.Show();
         }
     }

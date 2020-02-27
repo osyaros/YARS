@@ -85,25 +85,35 @@ namespace yar_bfng
 
 
 
+            int x = 0;
+            int y = 0;
             for (int i = 0; i < product_list.Length; i++)
             {
-                product_list[i].pb.Location = new Point(150 * i, 150);
                 product_list[i].pb.Size = new Size(150, 150);
                 product_list[i].pb.SizeMode = PictureBoxSizeMode.Zoom;
                 product_list[i].pb.Load("../../Pictures/" + product_list[i].name + ".jpg");
                 product_list[i].pb.Click += new EventHandler(pictureBox2_Click);
                 product_list[i].pb.Tag = product_list[i].name;
                 product_list[i].pb.Visible = true;
-
-                product_list[i].textbox.Location = new Point(150 * i, 250);
+                
                 product_list[i].textbox.Size = new Size(150, 40);
                 product_list[i].textbox.ReadOnly = true;
                 product_list[i].textbox.Enabled = false;
                 product_list[i].textbox.Multiline = true;
                 product_list[i].textbox.Text = product_list[i].name;
 
-                Controls.Add(product_list[i].pb);
-                Controls.Add(product_list[i].textbox);
+                product_list[i].pb.Location = new Point(x, y);
+                product_list[i].textbox.Location = new Point(x, y + 170);
+                x = x + 200;
+
+                if (x > Width - 200)
+                {
+                    y = y + 250;
+                    x = 0;
+                }
+
+                panel2.Controls.Add(product_list[i].pb);
+                panel2.Controls.Add(product_list[i].textbox);
             }
 
 
@@ -146,11 +156,13 @@ namespace yar_bfng
         private void filter_Click(object sender, EventArgs e)
         {
             int x = 0;
-            int y = 100;
+            int y = 0;
             for (int i = 0; i < product_list.Length; i++)
             {
                 product_list[i].pb.Visible = true;
                 product_list[i].textbox.Visible = true;
+
+                //if (priceTextBox.Text != "" && !product_list[i].name.Contains(priceTextBox.Text))
 
                 if (priceTextBox.Text != "" &&
                     product_list[i].price >= Convert.ToInt32(priceTextBox.Text))
@@ -186,6 +198,16 @@ namespace yar_bfng
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             filter_Click(null, null);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
