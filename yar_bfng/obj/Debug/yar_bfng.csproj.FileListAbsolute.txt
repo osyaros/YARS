@@ -10,3 +10,15 @@ C:\Users\user\source\repos\yar_bfng\yar_bfng\obj\Debug\yar_bfng.PriceListForm.re
 C:\Users\user\source\repos\yar_bfng\yar_bfng\obj\Debug\yar_bfng.StartForm.resources
 C:\Users\user\source\repos\yar_bfng\yar_bfng\obj\Debug\yar_bfng.CategoryForm.resources
 C:\Users\user\source\repos\yar_bfng\yar_bfng\obj\Debug\yar_bfng.ProductForm.resources
+C:\Users\user\Source\Repos\YARS2\yar_bfng\bin\Debug\yar_bfng.exe.config
+C:\Users\user\Source\Repos\YARS2\yar_bfng\bin\Debug\yar_bfng.exe
+C:\Users\user\Source\Repos\YARS2\yar_bfng\bin\Debug\yar_bfng.pdb
+C:\Users\user\Source\Repos\YARS2\yar_bfng\obj\Debug\yar_bfng.csprojAssemblyReference.cache
+C:\Users\user\Source\Repos\YARS2\yar_bfng\obj\Debug\yar_bfng.ProductForm.resources
+C:\Users\user\Source\Repos\YARS2\yar_bfng\obj\Debug\yar_bfng.StartForm.resources
+C:\Users\user\Source\Repos\YARS2\yar_bfng\obj\Debug\yar_bfng.CategoryForm.resources
+C:\Users\user\Source\Repos\YARS2\yar_bfng\obj\Debug\yar_bfng.PriceListForm.resources
+C:\Users\user\Source\Repos\YARS2\yar_bfng\obj\Debug\yar_bfng.Properties.Resources.resources
+C:\Users\user\Source\Repos\YARS2\yar_bfng\obj\Debug\yar_bfng.csproj.GenerateResource.cache
+C:\Users\user\Source\Repos\YARS2\yar_bfng\obj\Debug\yar_bfng.exe
+C:\Users\user\Source\Repos\YARS2\yar_bfng\obj\Debug\yar_bfng.pdb

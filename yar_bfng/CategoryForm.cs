@@ -50,7 +50,7 @@ namespace yar_bfng
             }
         }
 
-        Product[] product_list = new Product[21];
+        Product[] product_list = new Product[23];
         public CategoryForm(string text)
         {
             InitializeComponent();
@@ -77,8 +77,11 @@ namespace yar_bfng
             product_list[16] = new Product("DEEPCOOL Watercooler GAMMAXX L240T WHITE", "DEEPCOOL", 6000, "Системы охолождения");
             product_list[17] = new Product("DEEPCOOL Watercooler CASTLE 240 V2", "DEEPCOOL", 4000, "Системы охолождения");
             product_list[18] = new Product("MSI B450 GAMING PRO CARBON AC", "MSI", 6000, "Материнские платы");
-            product_list[19] = new Product("GIGABYTE B365 M AORUS ELITE", "GIGABYTE", 5000, "Материнские платы");
-            product_list[20] = new Product("GIGABYTE B450 AORUS ELITE", "GIGABYTE", 70000, "Материнские платы");
+            product_list[20] = new Product("GIGABYTE B450 AORUS ELITE", "GIGABYTE", 8000, "Материнские платы");
+            product_list[20] = new Product("GIGABYTE B365 M AORUS ELITE", "GIGABYTE", 7000, "Материнские платы");
+            product_list[19] = new Product("SAMSUNG 860 EVO MZ-76E500BW 500Гб", "SAMSUNG", 5560, "SSD накопители");
+            product_list[21] = new Product("KINGSTON A400 SA400S37 480Гб", "KINGSTON", 7800, "SSD накопители");
+            product_list[22] = new Product("SAMSUNG 970 EVO Plus MZ-V7S500BW 500Гб", "SAMSUNG", 8950, "SSD накопители");
 
 
 
