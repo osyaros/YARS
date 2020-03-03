@@ -39,52 +39,58 @@
             // productpictureBox
             // 
             this.productpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.productpictureBox.Location = new System.Drawing.Point(45, 131);
+            this.productpictureBox.Location = new System.Drawing.Point(31, 145);
+            this.productpictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.productpictureBox.Name = "productpictureBox";
-            this.productpictureBox.Size = new System.Drawing.Size(286, 238);
+            this.productpictureBox.Size = new System.Drawing.Size(214, 193);
             this.productpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.productpictureBox.TabIndex = 0;
             this.productpictureBox.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(438, 386);
+            this.button1.Location = new System.Drawing.Point(317, 479);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 45);
+            this.button1.Size = new System.Drawing.Size(141, 37);
             this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.button1.Text = "Добавить в корзину";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(714, 131);
+            this.textBox1.Location = new System.Drawing.Point(502, 127);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(288, 46);
+            this.textBox1.Size = new System.Drawing.Size(251, 38);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(714, 193);
+            this.textBox2.Location = new System.Drawing.Point(502, 169);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(288, 238);
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(251, 347);
             this.textBox2.TabIndex = 5;
             // 
             // ProductForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1066, 453);
+            this.ClientSize = new System.Drawing.Size(779, 560);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.productpictureBox);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ProductForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ProductForm_Load);

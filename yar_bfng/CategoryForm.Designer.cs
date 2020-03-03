@@ -35,10 +35,12 @@
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +66,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Location = new System.Drawing.Point(922, 28);
+            this.button1.Location = new System.Drawing.Point(693, 64);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 31);
             this.button1.TabIndex = 12;
@@ -91,7 +93,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(225, 29);
+            this.button2.Location = new System.Drawing.Point(908, 32);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 39);
             this.button2.TabIndex = 15;
@@ -102,18 +104,36 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.searchBox);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.typeComboBox);
             this.panel1.Controls.Add(this.priceTextBox);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Location = new System.Drawing.Point(12, 162);
+            this.panel1.Location = new System.Drawing.Point(6, 108);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1096, 95);
             this.panel1.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(574, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 26);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Поиск";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // searchBox
+            // 
+            this.searchBox.Location = new System.Drawing.Point(665, 40);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(237, 22);
+            this.searchBox.TabIndex = 17;
             // 
             // typeComboBox
             // 
@@ -124,10 +144,11 @@
             "Системы охолождения",
             "Видеокарты",
             "Материнские платы",
-            "Оперативная паамять",
+            "Оперативная память",
             "SSD накопители",
-            "HDD накопители"});
-            this.typeComboBox.Location = new System.Drawing.Point(357, 38);
+            "HDD накопители",
+            "Корпуса"});
+            this.typeComboBox.Location = new System.Drawing.Point(365, 35);
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(189, 24);
             this.typeComboBox.TabIndex = 16;
@@ -136,26 +157,29 @@
             // panel2
             // 
             this.panel2.AutoScroll = true;
-            this.panel2.Location = new System.Drawing.Point(1, 274);
+            this.panel2.Location = new System.Drawing.Point(6, 209);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1072, 572);
+            this.panel2.Size = new System.Drawing.Size(1096, 572);
             this.panel2.TabIndex = 17;
             // 
-            // textBox2
+            // button3
             // 
-            this.textBox2.Location = new System.Drawing.Point(665, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 22);
-            this.textBox2.TabIndex = 17;
+            this.button3.Location = new System.Drawing.Point(3, 8);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(76, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Фильтр";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label2
+            // label3
             // 
-            this.label2.Location = new System.Drawing.Point(574, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 26);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Поиск";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(225, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 17);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Категория товаров";
             // 
             // CategoryForm
             // 
@@ -189,6 +213,8 @@
         private System.Windows.Forms.ComboBox typeComboBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label3;
     }
 }
