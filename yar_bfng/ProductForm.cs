@@ -12,12 +12,15 @@ namespace yar_bfng
 {
     public partial class ProductForm : Form
     {
-        public ProductForm(string name)
+        Product product;
+        public ProductForm(Product prod)
         {
+            product = prod;
             InitializeComponent();
-            productpictureBox.Load("../../Pictures/" + name + ".jpg");
-            textBox1.Text = name;
-            textBox2.Lines = System.IO.File.ReadAllLines("../../Pictures/" + name + ".txt");
+            productpictureBox.Load("../../Pictures/" + prod.name + ".jpg");
+            textBox1.Text = prod.name;
+            textBox2.Lines = System.IO.File.ReadAllLines("../../Pictures/" + prod.name + ".txt");
+            priceBox.Text = prod.price.ToString() + "руб";
         }
 
         private void ProductForm_Load(object sender, EventArgs e)
@@ -29,5 +32,12 @@ namespace yar_bfng
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //CartForm.products.Add(product);
+        }
+
+        
     }
 }

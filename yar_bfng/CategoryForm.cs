@@ -85,6 +85,9 @@ namespace yar_bfng
             product_list[24] = new Product("KINGSTON A400 SA400S37 480Гб", "KINGSTON", 7800, "SSD накопители");
             product_list[25] = new Product("SAMSUNG 970 EVO Plus MZ-V7S500BW 500Гб", "SAMSUNG", 8950, "SSD накопители");
 
+            //CartForm.products.Clear();
+            //CartForm.products.Add(product_list[12]);
+
 
 
             int x = 0;
@@ -142,9 +145,15 @@ namespace yar_bfng
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            PictureBox pb = (PictureBox)sender;
-            ProductForm f = new ProductForm(pb.Tag.ToString());
-            f.Show();
+            for (int i = 0; i < product_list.Length; i++)
+            {
+                if (sender.Equals(product_list[i].pb))
+                {
+                    ProductForm f = new ProductForm(product_list[i]);
+                    f.Show();
+                    break;
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -229,6 +238,11 @@ namespace yar_bfng
                 panel1.Height = 80;
                 panel2.Location = new Point(panel1.Location.X, 210);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CartForm f = new CartForm();
         }
     }
 }
