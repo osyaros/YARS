@@ -19,7 +19,36 @@ namespace yar_bfng
             InitializeComponent();
             Text = "Корзина";
             pictureBoxCart.Load("../../Pictures/bg.jpg");
-            BackgroundImage = pictureBox1.Image;
+            BackgroundImage = pictureBoxCart.Image;
+            int x = 0;
+            int y = 100;
+            foreach (Product product in CartForm.products)
+            {   
+                PictureBox pb = new PictureBox();
+
+                pb.Size = product.pb.Size;
+                pb.Image = product.pb.Image;
+                pb.Location = new Point(x, y);
+                pb.Size = product.pb.Size;
+                pb.SizeMode = product.pb.SizeMode;
+                pb.Click += new EventHandler(CategoryForm.pictureBox2_Click);
+                pb.Visible = product.pb.Visible;
+
+                Controls.Add(pb);
+
+                TextBox textBox = new TextBox();
+                textBox.Size = product.textbox.Size;
+                textBox.ReadOnly = product.textbox.ReadOnly;
+                textBox.Enabled = false;
+                textBox.Multiline = true;
+                textBox.Text = product.textbox.Text;
+                textBox.Location = new Point(x + 150, y + 50);
+                Controls.Add(textBox);
+
+                y = y + 150;
+               
+                //   Controls.Add(product.price);
+            }
         }
 
         private void CartForm_Load(object sender, EventArgs e)

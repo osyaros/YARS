@@ -52,7 +52,7 @@ namespace yar_bfng
             }
         }
 
-        Product[] product_list = new Product[26];
+        public static Product[] product_list = new Product[26];
         public CategoryForm(string text)     
         {
             InitializeComponent();
@@ -145,11 +145,11 @@ namespace yar_bfng
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        public static void pictureBox2_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < product_list.Length; i++)
             {
-                if (sender.Equals(product_list[i].pb))
+                if (((PictureBox)sender).Image == product_list[i].pb.Image)
                 {
                     ProductForm f = new ProductForm(product_list[i]);
                     f.Show();
