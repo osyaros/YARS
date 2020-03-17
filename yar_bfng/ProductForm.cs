@@ -35,9 +35,8 @@ namespace yar_bfng
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //CartForm.products.Add(product);
-        }
+            CartForm.products.Add(product);
 
-        
-    }
+        }
+    } 
 }

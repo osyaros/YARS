@@ -46,3 +46,4 @@ C:\Users\user\Desktop\YARS-master\yar_bfng\obj\Debug\yar_bfng.Properties.Resourc
 C:\Users\user\Desktop\YARS-master\yar_bfng\obj\Debug\yar_bfng.csproj.GenerateResource.cache
 C:\Users\user\Desktop\YARS-master\yar_bfng\obj\Debug\yar_bfng.exe
 C:\Users\user\Desktop\YARS-master\yar_bfng\obj\Debug\yar_bfng.pdb
+C:\Users\user\Desktop\YARS-master\yar_bfng\obj\Debug\yar_bfng.CartForm.resources

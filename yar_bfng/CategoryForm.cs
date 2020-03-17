@@ -35,6 +35,8 @@ namespace yar_bfng
 
     public partial class CategoryForm : Form
     {
+        Product[] produc = new Product[26];
+        public static List<Product> cart = new List<Product>(); 
 
         void drawPicture(TextBox textBox, PictureBox pictureBox)
         {
@@ -50,8 +52,8 @@ namespace yar_bfng
             }
         }
 
-        Product[] product_list = new Product[26];
-        public CategoryForm(string text)
+        public static Product[] product_list = new Product[26];
+        public CategoryForm(string text)     
         {
             InitializeComponent();
             Text = text;
@@ -143,11 +145,11 @@ namespace yar_bfng
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        public static void pictureBox2_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < product_list.Length; i++)
             {
-                if (sender.Equals(product_list[i].pb))
+                if (((PictureBox)sender).Image == product_list[i].pb.Image)
                 {
                     ProductForm f = new ProductForm(product_list[i]);
                     f.Show();
@@ -243,6 +245,7 @@ namespace yar_bfng
         private void button4_Click(object sender, EventArgs e)
         {
             CartForm f = new CartForm();
+            f.Show();
         }
     }
 }
