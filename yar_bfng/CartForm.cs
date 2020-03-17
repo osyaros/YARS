@@ -45,6 +45,17 @@ namespace yar_bfng
                 textBox.Location = new Point(x + 150, y + 50);
                 Controls.Add(textBox);
 
+                Label label = new Label();
+                label.Size = new Size(100, 30);
+                label.Text = product.price.ToString();
+                label.Location = new Point(x + 400, y + 50);
+                Controls.Add(label);
+
+                NumericUpDown numericUpDown1 = new NumericUpDown();
+                numericUpDown1.Location = new Point(x + 300, y + 50);
+                numericUpDown1.Size = new Size(60, 40);
+                Controls.Add(numericUpDown1);
+
                 y = y + 150;
                
                 //   Controls.Add(product.price);
