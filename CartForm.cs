@@ -12,7 +12,7 @@ namespace yar_bfng
 {
     public partial class CartForm : Form
     {
-        public static List<Product> products = new List<Product>();
+        public static Dictionary<Product,int> products = new Dictionary<Product,int>();
 
         public CartForm()
         {
@@ -22,10 +22,11 @@ namespace yar_bfng
             BackgroundImage = pictureBoxCart.Image;
             int x = 0;
             int y = 100;
-            foreach (Product product in CartForm.products)
-            {   
-                PictureBox pb = new PictureBox();
+            foreach (KeyValuePair<Product,int> kuplenproduct in CartForm.products)
+            {
+               Product product = kuplenproduct.Key;
 
+                PictureBox pb = new PictureBox();
                 pb.Size = new Size(120,120);
                 pb.Image = product.pb.Image;
                 pb.Location = new Point(x, y);
@@ -47,21 +48,70 @@ namespace yar_bfng
 
                 Label label = new Label();
                 label.Size = new Size(100, 30);
-                label.Text = product.price.ToString() + "руб";
-                label.Location = new Point(x + 330, y +30);
+                label.Text = (product.price * kuplenproduct.Value).ToString() + "руб";
+                label.Location = new Point(x + 430, y +30);
                 Controls.Add(label);
 
-                NumericUpDown numericUpDown1 = new NumericUpDown();
-                numericUpDown1.Location = new Point(x + 270, y + 30);
-                numericUpDown1.Size = new Size(60, 40);
-                Controls.Add(numericUpDown1);
+                Label pricetovar = new Label();
+                pricetovar.Size = label.Size;
+                pricetovar.Text = "";
+                pricetovar.Location = new Point(x + 120, y + 70);
+                Controls.Add(pricetovar);
+
+
+                NumericUpDown numericUpDown = new NumericUpDown();
+                numericUpDown.Location = new Point(x + 270, y + 30);
+                numericUpDown.Size = new Size(60, 40);
+                numericUpDown.Value = kuplenproduct.Value;
+                numericUpDown.ValueChanged += new EventHandler(numericUpDown_ValueChanged);
+                Controls.Add(numericUpDown);
 
                 y = y + 150;
                
-                //   Controls.Add(product.price);
+              
             }
         }
 
+        private void numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown nud = (NumericUpDown)sender;
+
+            for(int i = 0; i < CartForm.products.Count;i++)
+            {
+                if(nud.Location == new Point(270, 150 * i + 130))
+                { 
+                    int price = 0;
+
+                   foreach(Control ctrl in Controls)
+                    {
+                        if (ctrl is Label &&
+                            ctrl.Location == new Point(430, 150 * i + 30))
+                        {
+                            price = Convert.ToInt32(ctrl.Text);
+                        }
+                    }
+                    foreach (Control ctrl in Controls)
+                    {
+                        if (ctrl is Label &&
+                            ctrl.Location == new Point(120, 150 * i + 70))
+                        {
+                            ctrl.Text = (price * nud.Value).ToString() + "реее";
+                        }
+                    }
+                    //int x = nud.Value * CartForm.products.Keys[i].price;
+                }
+            }
+
+
+
+            
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
         private void CartForm_Load(object sender, EventArgs e)
         {
            
@@ -72,19 +122,12 @@ namespace yar_bfng
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void pictureBoxCart_Click(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }
