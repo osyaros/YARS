@@ -12,8 +12,20 @@ namespace yar_bfng
 {
     public partial class CartForm : Form
     {
+        public static int TotalCount = 0;
+        public static int TotalPrice = 0;
         public static Dictionary<Product,int> products = new Dictionary<Product,int>();
-
+        
+        public static void calculateCart()
+        {
+            TotalCount = 0;
+            TotalPrice = 0;
+            foreach(KeyValuePair<Product ,int> kuplenproduct in CartForm.products)
+            {
+                TotalCount = TotalCount + kuplenproduct.Value;
+                TotalPrice = TotalPrice + kuplenproduct.Value * kuplenproduct.Key.price;
+            }
+        }
         public CartForm()
         {
             InitializeComponent();
@@ -54,9 +66,11 @@ namespace yar_bfng
 
                 Label pricetovar = new Label();
                 pricetovar.Size = label.Size;
-                pricetovar.Text = "";
+                pricetovar.Text = product.price.ToString() ;
+                pricetovar.Visible = false;
                 pricetovar.Location = new Point(x + 120, y + 70);
                 Controls.Add(pricetovar);
+                
 
 
                 NumericUpDown numericUpDown = new NumericUpDown();
@@ -70,6 +84,8 @@ namespace yar_bfng
                
               
             }
+
+           
         }
 
         private void numericUpDown_ValueChanged(object sender, EventArgs e)
@@ -81,11 +97,15 @@ namespace yar_bfng
                 if(nud.Location == new Point(270, 150 * i + 130))
                 { 
                     int price = 0;
+                    
+                    foreach(Product prod in CartForm.products)
+                    {
 
+                    }
                    foreach(Control ctrl in Controls)
                     {
                         if (ctrl is Label &&
-                            ctrl.Location == new Point(430, 150 * i + 30))
+                            ctrl.Location == new Point(120, 150 * i + 170))
                         {
                             price = Convert.ToInt32(ctrl.Text);
                         }
@@ -93,18 +113,21 @@ namespace yar_bfng
                     foreach (Control ctrl in Controls)
                     {
                         if (ctrl is Label &&
-                            ctrl.Location == new Point(120, 150 * i + 70))
+                            ctrl.Location == new Point(430, 150 * i + 130))
                         {
-                            ctrl.Text = (price * nud.Value).ToString() + "реее";
+                            ctrl.Text = (price * nud.Value).ToString() + "руб";
                         }
                     }
+                    
                     //int x = nud.Value * CartForm.products.Keys[i].price;
                 }
+               
             }
 
+            calculateCart();
+            label1.Text = TotalPrice.ToString();
 
 
-            
 
         }
 
