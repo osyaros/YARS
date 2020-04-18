@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,7 +49,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(1, 441);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 358);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(10, 10);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -58,18 +60,20 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(941, 0);
+            this.textBox1.Location = new System.Drawing.Point(706, 0);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 11;
             this.textBox1.Visible = false;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Location = new System.Drawing.Point(693, 64);
+            this.button1.Location = new System.Drawing.Point(520, 52);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 31);
+            this.button1.Size = new System.Drawing.Size(124, 25);
             this.button1.TabIndex = 12;
             this.button1.Text = "Смотреть подробнее";
             this.button1.UseVisualStyleBackColor = false;
@@ -78,25 +82,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 38);
+            this.label1.Location = new System.Drawing.Point(25, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "Цена";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // priceTextBox
             // 
-            this.priceTextBox.Location = new System.Drawing.Point(82, 37);
+            this.priceTextBox.Location = new System.Drawing.Point(62, 30);
+            this.priceTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(137, 22);
+            this.priceTextBox.Size = new System.Drawing.Size(104, 20);
             this.priceTextBox.TabIndex = 14;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(908, 32);
+            this.button2.Location = new System.Drawing.Point(681, 26);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 39);
+            this.button2.Size = new System.Drawing.Size(94, 32);
             this.button2.TabIndex = 15;
             this.button2.Text = "Найти";
             this.button2.UseVisualStyleBackColor = true;
@@ -115,25 +122,28 @@
             this.panel1.Controls.Add(this.typeComboBox);
             this.panel1.Controls.Add(this.priceTextBox);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Location = new System.Drawing.Point(6, 108);
+            this.panel1.Location = new System.Drawing.Point(4, 88);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1096, 95);
+            this.panel1.Size = new System.Drawing.Size(822, 77);
             this.panel1.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(225, 40);
+            this.label3.Location = new System.Drawing.Point(169, 32);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 17);
+            this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "Категория товаров";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 8);
+            this.button3.Location = new System.Drawing.Point(2, 6);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 23);
+            this.button3.Size = new System.Drawing.Size(57, 19);
             this.button3.TabIndex = 0;
             this.button3.Text = "Фильтр";
             this.button3.UseVisualStyleBackColor = true;
@@ -141,18 +151,20 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(574, 38);
+            this.label2.Location = new System.Drawing.Point(430, 31);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 26);
+            this.label2.Size = new System.Drawing.Size(54, 21);
             this.label2.TabIndex = 18;
             this.label2.Text = "Поиск";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(665, 40);
+            this.searchBox.Location = new System.Drawing.Point(499, 32);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(237, 22);
+            this.searchBox.Size = new System.Drawing.Size(179, 20);
             this.searchBox.TabIndex = 17;
             // 
             // typeComboBox
@@ -168,41 +180,47 @@
             "SSD накопители",
             "HDD накопители",
             "Корпуса"});
-            this.typeComboBox.Location = new System.Drawing.Point(365, 35);
+            this.typeComboBox.Location = new System.Drawing.Point(274, 28);
+            this.typeComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(189, 24);
+            this.typeComboBox.Size = new System.Drawing.Size(143, 21);
             this.typeComboBox.TabIndex = 16;
             this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.filter_Click);
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
-            this.panel2.Location = new System.Drawing.Point(6, 209);
+            this.panel2.Location = new System.Drawing.Point(4, 170);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1096, 572);
+            this.panel2.Size = new System.Drawing.Size(822, 465);
             this.panel2.TabIndex = 17;
             // 
             // button4
             // 
+            this.button4.AutoSize = true;
             this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(914, 42);
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(686, 34);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 60);
+            this.button4.Size = new System.Drawing.Size(113, 49);
             this.button4.TabIndex = 18;
-            this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // CategoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1111, 781);
+            this.ClientSize = new System.Drawing.Size(833, 596);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CategoryForm";
             this.Text = "Категория";
             this.Load += new System.EventHandler(this.CoreForm_Load);

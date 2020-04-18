@@ -35,8 +35,28 @@ namespace yar_bfng
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CartForm.products.Add(product);
+            if(CartForm.products.ContainsKey(product))
+            
+               CartForm.products[product] = CartForm.products[product] + 1;
+            else
+               CartForm.products.Add(product, 1);
 
+        }
+
+        private void смотретьПодробнееToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timeshow = Environment.TickCount;
+        }
+        int timeshow = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(Environment.TickCount - timeshow < 5000)
+            
+                label1.Visible = true;
+
+             else
+                  label1.Visible = false;
+            
         }
     } 
 }

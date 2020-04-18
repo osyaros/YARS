@@ -34,23 +34,26 @@
             // 
             // pictureBoxCart
             // 
-            this.pictureBoxCart.Location = new System.Drawing.Point(2, 4);
+            this.pictureBoxCart.Location = new System.Drawing.Point(2, 3);
+            this.pictureBoxCart.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxCart.Name = "pictureBoxCart";
-            this.pictureBoxCart.Size = new System.Drawing.Size(28, 22);
+            this.pictureBoxCart.Size = new System.Drawing.Size(10, 10);
             this.pictureBoxCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCart.TabIndex = 4;
             this.pictureBoxCart.TabStop = false;
+            this.pictureBoxCart.Visible = false;
             this.pictureBoxCart.Click += new System.EventHandler(this.pictureBoxCart_Click);
             // 
             // CartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1074, 825);
+            this.ClientSize = new System.Drawing.Size(806, 596);
             this.Controls.Add(this.pictureBoxCart);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CartForm";
             this.Load += new System.EventHandler(this.CartForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCart)).EndInit();

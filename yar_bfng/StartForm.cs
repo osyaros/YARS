@@ -27,5 +27,11 @@ namespace yar_bfng
             CategoryForm f = new CategoryForm("");
             f.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Entercreators f = new Entercreators();
+            f.Show();
+        }
     }
 }

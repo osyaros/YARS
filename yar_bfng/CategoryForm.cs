@@ -107,7 +107,7 @@ namespace yar_bfng
                 product_list[i].textbox.ReadOnly = true;
                 product_list[i].textbox.Enabled = false;
                 product_list[i].textbox.Multiline = true;
-                product_list[i].textbox.Text = product_list[i].name;
+                product_list[i].textbox.Text = product_list[i].type + " " + product_list[i].name;
 
                 product_list[i].pb.Location = new Point(x, y);
                 product_list[i].textbox.Location = new Point(x, y + 170);
