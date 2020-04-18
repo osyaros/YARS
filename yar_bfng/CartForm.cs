@@ -80,6 +80,8 @@ namespace yar_bfng
                 numericUpDown.ValueChanged += new EventHandler(numericUpDown_ValueChanged);
                 Controls.Add(numericUpDown);
 
+            
+
                 y = y + 150;
                
               
@@ -97,10 +99,21 @@ namespace yar_bfng
                 if(nud.Location == new Point(270, 150 * i + 130))
                 { 
                     int price = 0;
-                    
-                    foreach(Product prod in CartForm.products)
+                    Image image = null;
+                    foreach(Control ctrl in Controls)
                     {
-
+                        if (ctrl is PictureBox &&
+                            ctrl.Location == new Point(0, 150 * i + 100))
+                            {
+                                image = ((PictureBox)ctrl).Image;
+                            }
+                    }
+                    foreach(Product prod in CategoryForm.product_list)
+                    {
+                       if( prod.pb.Image == image)
+                        {
+                        CartForm.products[prod] = Convert.ToInt32(nud.Value);
+                        }
                     }
                    foreach(Control ctrl in Controls)
                     {
@@ -126,7 +139,7 @@ namespace yar_bfng
 
             calculateCart();
             label1.Text = TotalPrice.ToString();
-
+            label1.Location = new Point(600, 200 * 2);
 
 
         }

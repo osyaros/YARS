@@ -15,7 +15,7 @@ namespace yar_bfng
         public Entercreators()
         {
             InitializeComponent();
-
+            Text = "Вход";
             Label lb = new Label();
             lb.Size = new Size(100, 30);
             lb.Text = "Логин";
@@ -55,10 +55,11 @@ namespace yar_bfng
                 if (ctrl is TextBox &&
                       ctrl.Location == new Point(300, 190))
                 {
-                    if(ctrl.Text == "не сборка,а конфигурация" )
+                    if(ctrl.Text == "no admin" )
                     {
                         Creatormode f = new Creatormode();
                         f.Show();
+                        break;
                     }
                         
                 }

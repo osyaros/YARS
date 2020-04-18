@@ -35,7 +35,7 @@ namespace yar_bfng
 
     public partial class CategoryForm : Form
     {
-        Product[] produc = new Product[26];
+        Product[] product = new Product[26];
         public static List<Product> cart = new List<Product>(); 
 
         void drawPicture(TextBox textBox, PictureBox pictureBox)
@@ -52,7 +52,7 @@ namespace yar_bfng
             }
         }
 
-        public static Product[] product_list = new Product[26];
+        public static List<Product> product_list = new List<Product>();
         public CategoryForm(string text)     
         {
             InitializeComponent();
@@ -60,16 +60,24 @@ namespace yar_bfng
             pictureBox1.Load("../../Pictures/bg.jpg");
             BackgroundImage = pictureBox1.Image;
 
-            product_list[0] = new Product("AMD Ryzen 5 2600x", "AMD", 12000, "Процессоры");
-            product_list[1] = new Product("AMD Ryzen 7 3700x", "AMD", 25000, "Процессоры");
-            product_list[2] = new Product("AMD Ryzen 9", "AMD", 50000, "Процессоры");
-            product_list[3] = new Product("Intel Core I9-9900KS", "Intel", 60000, "Процессоры");
-            product_list[4] = new Product("Intel i9_9940x", "Intel", 100000, "Процессоры");
-            product_list[5] = new Product("MSI Nvidia Geforce GTX 1660", "MSI", 17000, "Видеокарты");
-            product_list[6] = new Product("ASUS Geforce GTX 1080 Ti", "ASUS", 100000, "Видеокарты");
-            product_list[7] = new Product("MSI Nvidia Geforce RTX 2060", "MSI", 100000, "Видеокарты");
-            product_list[8] = new Product("GIGABYTE nVidia GeForce RTX 2070", "GIGABYTE", 39000, "Видеокарты");
-            product_list[9] = new Product("GIGABYTE Nvidia GeForce RTX 2080", "GIGABYTE", 60000, "Видеокарты");
+            string[] lines = System.IO.File.ReadAllLines("PRODUCTSLIST.txt");
+            foreach(string str in lines)
+            {
+                string[] parts = str.Split(new string[] { ", " }, StringSplitOptions.None);
+               product_list.Add(new Product(parts[0], parts[1], Convert.ToInt32(parts[2]),parts[3]));
+            }
+           
+            /*
+            product_list[0] =  new Product("AMD Ryzen 5 2600x", "AMD", 12000, "Процессоры");
+            product_list[1] =  new Product("AMD Ryzen 7 3700x", "AMD", 25000, "Процессоры");
+            product_list[2] =  new Product("AMD Ryzen 9", "AMD", 50000, "Процессоры");
+            product_list[3] =  new Product("Intel Core I9-9900KS", "Intel", 60000, "Процессоры");
+            product_list[4] =  new Product("Intel i9_9940x", "Intel", 100000, "Процессоры");
+            product_list[5] =  new Product("MSI Nvidia Geforce GTX 1660", "MSI", 17000, "Видеокарты");
+            product_list[6] =  new Product("ASUS Geforce GTX 1080 Ti", "ASUS", 58000, "Видеокарты");
+            product_list[7] =  new Product("MSI Nvidia Geforce RTX 2060", "MSI", 35000, "Видеокарты");
+            product_list[8] =  new Product("GIGABYTE nVidia GeForce RTX 2070", "GIGABYTE", 39000, "Видеокарты");
+            product_list[9] =  new Product("GIGABYTE Nvidia GeForce RTX 2080", "GIGABYTE", 60000, "Видеокарты");
             product_list[10] = new Product("AEROCOOL KCAS PLUS 600Вт", "AEROCOOL", 3300, "Блоки питания");
             product_list[11] = new Product("THERMALTAKE Smart BX1 RGB, 750Вт", "THERMALTAKE", 6000, "Блоки питания");
             product_list[12] = new Product("be quite! DARK POWER PRO 11 850W", "be quite!", 3900, "Блоки питания");
@@ -86,15 +94,15 @@ namespace yar_bfng
             product_list[23] = new Product("SAMSUNG 860 EVO MZ-76E500BW 500Гб", "SAMSUNG", 5560, "SSD накопители");
             product_list[24] = new Product("KINGSTON A400 SA400S37 480Гб", "KINGSTON", 7800, "SSD накопители");
             product_list[25] = new Product("SAMSUNG 970 EVO Plus MZ-V7S500BW 500Гб", "SAMSUNG", 8950, "SSD накопители");
-
+            */
             //CartForm.products.Clear();
-            //CartForm.products.Add(product_list[12]);
+            
 
 
 
             int x = 0;
             int y = 0;
-            for (int i = 0; i < product_list.Length; i++)
+            for (int i = 0; i < product_list.Count; i++)
             {
                 product_list[i].pb.Size = new Size(150, 150);
                 product_list[i].pb.SizeMode = PictureBoxSizeMode.Zoom;
@@ -147,7 +155,7 @@ namespace yar_bfng
 
         public static void pictureBox2_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < product_list.Length; i++)
+            for (int i = 0; i < product_list.Count; i++)
             {
                 if (((PictureBox)sender).Image == product_list[i].pb.Image)
                 {
@@ -170,7 +178,7 @@ namespace yar_bfng
         {
             int x = 0;
             int y = 0;
-            for (int i = 0; i < product_list.Length; i++)
+            for (int i = 0; i < product_list.Count; i++)
             {
                 product_list[i].pb.Visible = true;
                 product_list[i].textbox.Visible = true;

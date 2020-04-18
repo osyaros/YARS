@@ -1,0 +1,26 @@
+﻿AMD Ryzen 5 2600x, AMD, 12000, Процессоры
+AMD Ryzen 7 3700x, AMD, 25000, Процессоры
+AMD Ryzen 9, AMD, 50000, Процессоры
+Intel Core I9-9900KS, Intel, 60000, Процессоры
+Intel i9_9940x, Intel, 100000, Процессоры
+MSI Nvidia Geforce GTX 1660, MSI, 17000, Видеокарты
+ASUS Geforce GTX 1080 Ti, ASUS, 58000, Видеокарты
+MSI Nvidia Geforce RTX 2060, MSI, 35000, Видеокарты
+GIGABYTE nVidia GeForce RTX 2070, GIGABYTE, 39000, Видеокарты
+GIGABYTE Nvidia GeForce RTX 2080, GIGABYTE, 60000, Видеокарты
+AEROCOOL KCAS PLUS 600Вт, AEROCOOL, 3300, Блоки питания
+THERMALTAKE Smart BX1 RGB 750Вт, THERMALTAKE, 6000, Блоки питания
+be quite! DARK POWER PRO 11 850W, be quite!, 3900, Блоки питания
+AEROCOOL Strike-X 1100Вт, AEROCOOL, 10000, Блоки питания
+be quiet! System Power 9 500W, TITAN, 6900, Блоки питания
+TITAN TTC NK35TZ, Intel, 5000, Системы охолождения
+DEEPCOOL Watercooler GAMMAXX L240T WHITE, DEEPCOOL, 4500, Системы охолождения
+DEEPCOOL Watercooler CASTLE 240 V2, DEEPCOOL, 7000, Системы охолождения
+MSI B450 GAMING PRO CARBON AC, MSI, 6000, Материнские платы
+GIGABYTE B450 AORUS ELITE, GIGABYTE, 8000, Материнские платы
+GIGABYTE B365 M AORUS ELITE, GIGABYTE, 7000, Материнские платы
+MSI MPG Z390 GAMING PRO CARBON, GIGABYTE, 140000, Материнские платы
+ASUS ROG STRIX X299-E GAMING, ASUS, 21000, Материнские платы
+SAMSUNG 860 EVO MZ-76E500BW 500Гб, SAMSUNG, 5560, SSD накопители
+KINGSTON A400 SA400S37 480Гб, KINGSTON, 7800, SSD накопители
+SAMSUNG 970 EVO Plus MZ-V7S500BW 500Гб, SAMSUNG, 8950, SSD накопители

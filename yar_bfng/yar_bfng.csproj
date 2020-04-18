@@ -52,6 +52,18 @@
     <Compile Include="CartForm.Designer.cs">
       <DependentUpon>CartForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entercreators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entercreators.Designer.cs">
+      <DependentUpon>Entercreators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creatormode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creatormode.Designer.cs">
+      <DependentUpon>Creatormode.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +86,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CartForm.resx">
       <DependentUpon>CartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creatormode.resx">
+      <DependentUpon>Creatormode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entercreators.resx">
+      <DependentUpon>Entercreators.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureBoxCart = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +45,14 @@
             this.pictureBoxCart.Visible = false;
             this.pictureBoxCart.Click += new System.EventHandler(this.pictureBoxCart_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(678, 356);
+            this.label1.MaximumSize = new System.Drawing.Size(100, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 29);
+            this.label1.TabIndex = 5;
+            // 
             // CartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -51,6 +60,7 @@
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(806, 596);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxCart);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -63,5 +73,6 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBoxCart;
+        private System.Windows.Forms.Label label1;
     }
 }
