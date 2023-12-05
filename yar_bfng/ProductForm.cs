@@ -50,7 +50,7 @@ namespace yar_bfng
         int timeshow = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(Environment.TickCount - timeshow < 5000)
+            if(Environment.TickCount - timeshow < 1000)
             
                 label1.Visible = true;
 

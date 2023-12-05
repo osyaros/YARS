@@ -18,7 +18,7 @@ namespace yar_bfng
         public string type;
         public PictureBox pb;
         public TextBox textbox;
-
+        //Структура - Продукт и его "характеристики"
         public Product(string name_, string mark_, int price_, string type_)
         {
             name = name_;
@@ -42,7 +42,7 @@ namespace yar_bfng
         {
             if (textBox.Text != "")
             {
-                pictureBox.Load("../../Pictures/" + textBox.Text + ".jpg");
+                pictureBox.Load("../../Pictures/" + textBox.Text + ".jpg"); //Отрисовка
                 pictureBox.Tag = textBox.Text;
             }
             else
@@ -63,7 +63,7 @@ namespace yar_bfng
             string[] lines = System.IO.File.ReadAllLines("PRODUCTSLIST.txt");
             foreach(string str in lines)
             {
-                string[] parts = str.Split(new string[] { ", " }, StringSplitOptions.None);
+                string[] parts = str.Split(new string[] { ", " }, StringSplitOptions.None);             //Подгружаем все товары с txt файлика - наше бд
                product_list.Add(new Product(parts[0], parts[1], Convert.ToInt32(parts[2]),parts[3]));
             }
            
@@ -78,7 +78,7 @@ namespace yar_bfng
             product_list[7] =  new Product("MSI Nvidia Geforce RTX 2060", "MSI", 35000, "Видеокарты");
             product_list[8] =  new Product("GIGABYTE nVidia GeForce RTX 2070", "GIGABYTE", 39000, "Видеокарты");
             product_list[9] =  new Product("GIGABYTE Nvidia GeForce RTX 2080", "GIGABYTE", 60000, "Видеокарты");
-            product_list[10] = new Product("AEROCOOL KCAS PLUS 600Вт", "AEROCOOL", 3300, "Блоки питания");
+            product_list[10] = new Product("AEROCOOL KCAS PLUS 600Вт", "AEROCOOL", 3300, "Блоки питания");              ||СТАРАЯ ВЕРСИЯ ХРАНЕНИЯ ДАННЫХ
             product_list[11] = new Product("THERMALTAKE Smart BX1 RGB, 750Вт", "THERMALTAKE", 6000, "Блоки питания");
             product_list[12] = new Product("be quite! DARK POWER PRO 11 850W", "be quite!", 3900, "Блоки питания");
             product_list[13] = new Product("AEROCOOL Strike-X 1100Вт", "AEROCOOL", 10000, "Блоки питания");
@@ -106,14 +106,14 @@ namespace yar_bfng
             {
                 product_list[i].pb.Size = new Size(150, 150);
                 product_list[i].pb.SizeMode = PictureBoxSizeMode.Zoom;
-                product_list[i].pb.Load("../../Pictures/" + product_list[i].name + ".jpg");
+                product_list[i].pb.Load("../../Pictures/" + product_list[i].name + ".jpg");             //Отрисовываем наш товары
                 product_list[i].pb.Click += new EventHandler(pictureBox2_Click);
                 product_list[i].pb.Tag = product_list[i].name;
                 product_list[i].pb.Visible = true;
                 
                 product_list[i].textbox.Size = new Size(150, 40);
                 product_list[i].textbox.ReadOnly = true;
-                product_list[i].textbox.Enabled = false;
+                product_list[i].textbox.Enabled = false;                                            //Атрибуты  отрисовки
                 product_list[i].textbox.Multiline = true;
                 product_list[i].textbox.Text = product_list[i].type + " " + product_list[i].name;
 
@@ -134,12 +134,6 @@ namespace yar_bfng
 
             button1.Visible = false;
 
-            if (text == "Системы охолождения")
-            {
-                button1.Visible = true;
-                button1.Tag = "http://hyperpc.ru";
-            }
-
             filter_Click(null, null);
         }
 
@@ -159,7 +153,7 @@ namespace yar_bfng
             {
                 if (((PictureBox)sender).Image == product_list[i].pb.Image)
                 {
-                    ProductForm f = new ProductForm(product_list[i]);
+                    ProductForm f = new ProductForm(product_list[i]); //Клик по товару -> переход на страницу с товаром
                     f.Show();
                     break;
                 }
@@ -186,19 +180,19 @@ namespace yar_bfng
                 //if (priceTextBox.Text != "" && !product_list[i].name.Contains(priceTextBox.Text))
 
                 if (priceTextBox.Text != "" &&
-                    product_list[i].price >= Convert.ToInt32(priceTextBox.Text))
+                    product_list[i].price >= Convert.ToInt32(priceTextBox.Text))        //Фильтр по цене
                 {
                     product_list[i].pb.Visible = false;
                     product_list[i].textbox.Visible = false;
                 }
                 else if (typeComboBox.Text != "" &&
-                    product_list[i].type != typeComboBox.Text)
+                    product_list[i].type != typeComboBox.Text)      //Фильтр по категории
                 {
                     product_list[i].pb.Visible = false;
                     product_list[i].textbox.Visible = false;
                 }
                 else if (searchBox.Text != "" &&
-                        !product_list[i].name.ToLower().Contains(searchBox.Text.ToLower()))
+                        !product_list[i].name.ToLower().Contains(searchBox.Text.ToLower())) //Поиск
                 {
                     product_list[i].pb.Visible = false;
                     product_list[i].textbox.Visible = false;
@@ -207,7 +201,7 @@ namespace yar_bfng
                 if (product_list[i].pb.Visible)
                 {
                     product_list[i].pb.Location = new Point(x, y);
-                    product_list[i].textbox.Location = new Point(x, y + 170);
+                    product_list[i].textbox.Location = new Point(x, y + 170);  //Смещение товара
                     x = x + 200;
 
                     if (x > Width - 200)
@@ -216,6 +210,11 @@ namespace yar_bfng
                         x = 0;
                     }
                 }
+            }
+            if (typeComboBox.Text == "Системы охолождения") //ФИЧА!!!!
+            {
+                button1.Visible = true;
+                button1.Tag = "http://hyperpc.ru";
             }
         }
 
@@ -236,12 +235,12 @@ namespace yar_bfng
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Скрыть - открыть фильтр
         {
             if(panel1.Height > 20)
             {
                 panel1.Height = 20;
-                panel2.Location = new Point(panel1.Location.X, 130);
+                panel2.Location = new Point(panel1.Location.X, 130); 
             }
             else
             {
@@ -252,7 +251,7 @@ namespace yar_bfng
 
         private void button4_Click(object sender, EventArgs e)
         {
-            CartForm f = new CartForm();
+            CartForm f = new CartForm(); //Переход в корзину
             f.Show();
         }
     }
